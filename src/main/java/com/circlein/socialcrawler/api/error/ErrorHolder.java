@@ -10,9 +10,6 @@ import java.util.Set;
 @Getter
 public class ErrorHolder {
 
-    public static final String CANT_BE_BLANK = "0001";
-    public static final String INVALID_VALUE = "0002";
-
     private final Set<ErrorEntry> errors = new LinkedHashSet<>();
 
     public void add(ErrorEntry entry) {

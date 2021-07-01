@@ -16,9 +16,8 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 
 import javax.validation.Valid;
 
-import static com.circlein.socialcrawler.api.error.ErrorHolder.CANT_BE_BLANK;
-import static com.circlein.socialcrawler.api.error.ErrorHolder.INVALID_VALUE;
-
+import static com.circlein.socialcrawler.api.error.ErrorEntry.CANT_BE_BLANK;
+import static com.circlein.socialcrawler.api.error.ErrorEntry.INVALID_VALUE;
 
 @RestController
 @Validated

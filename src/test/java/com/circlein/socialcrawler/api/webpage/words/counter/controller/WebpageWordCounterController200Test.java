@@ -1,7 +1,7 @@
 package com.circlein.socialcrawler.api.webpage.words.counter.controller;
 
 import com.circlein.socialcrawler.api.webpage.words.counter.model.WordCountResponse;
-import com.circlein.socialcrawler.api.webpage.words.counter.service.WebpageContentReader;
+import com.circlein.socialcrawler.api.webpage.content.reader.WebpageContentReader;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.web.reactive.function.client.WebClient;

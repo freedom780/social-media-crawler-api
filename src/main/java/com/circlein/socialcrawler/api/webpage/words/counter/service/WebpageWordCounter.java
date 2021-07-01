@@ -1,5 +1,6 @@
 package com.circlein.socialcrawler.api.webpage.words.counter.service;
 
+import com.circlein.socialcrawler.api.webpage.content.reader.WebpageContentReader;
 import com.circlein.socialcrawler.api.webpage.words.counter.model.WordCountRequest;
 import com.circlein.socialcrawler.api.webpage.words.counter.model.WordCountResponse;
 import org.springframework.stereotype.Service;
