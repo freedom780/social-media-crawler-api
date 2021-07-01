@@ -3,11 +3,9 @@ package com.circlein.socialcrawler.api.webpage.words.counter.model;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.io.Serializable;
-
 @Getter
 @ToString
-public class WordCountRequest implements Serializable {
+public class WordCountRequest {
 
     private final String url;
     private final String word;

@@ -83,6 +83,20 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
     }
 
+    @Test
+    public void return400BadRequestWhenPhraseIsUsedAndNotAWord() {
+
+        // setup fixture
+        WebClient webClient = createWebClient();
+        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-phrase-instead-of-word.json");
+
+        // exercise SUT + verify
+        assertThrows(WebClientResponseException.BadRequest.class, () -> {
+            consumeWordCountApi(webClient, requestWithoutWord);
+        });
+
+    }
+
     private void consumeWordCountApiUsingInvalidMethod(WebClient webClient) {
         webClient.get().uri(WEBPAGE_WORDS_COUNT_REQUEST_URI).retrieve().bodyToMono(WordCountResponse.class).block();
     }

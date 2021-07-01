@@ -61,6 +61,11 @@ public class WebpageWordCounterController {
         if (StringUtils.isBlank(request.getWord())) {
             ErrorEntry entry = new ErrorEntry(CANT_BE_BLANK, "element 'word' can't be blank");
             errorHolder.add(entry);
+        } else {
+            if (!StringUtils.isAlphanumeric(request.getWord())) {
+                ErrorEntry entry = new ErrorEntry(INVALID_VALUE, "element 'word' can't be a phrase, it must be a single alphanumeric word without spaces");
+                errorHolder.add(entry);
+            }
         }
     }
 
