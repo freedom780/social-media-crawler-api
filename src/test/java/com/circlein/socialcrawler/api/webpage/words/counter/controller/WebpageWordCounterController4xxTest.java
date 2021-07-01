@@ -1,6 +1,6 @@
-package com.circlein.socialcrawler.api.webpage.words.counter;
+package com.circlein.socialcrawler.api.webpage.words.counter.controller;
 
-import com.circlein.socialcrawler.api.common.JsonResponseReader;
+import com.circlein.socialcrawler.api.common.TestContentReader;
 import com.circlein.socialcrawler.api.webpage.words.counter.model.WordCountResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class WebpageWordCounterController4xxTest extends WebpageWordCounterControllerTest {
 
     @Autowired
-    private JsonResponseReader jsonResponseReader;
+    private TestContentReader testContentReader;
 
     @Test
     public void return405MethodNotAllowedOnInvalidMethod() {
@@ -32,7 +32,7 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
         // setup fixture
         WebClient webClient = createWebClient();
-        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-missing-url.json");
+        String requestWithoutWord = testContentReader.read("webpage/words/counter/json/invalid/invalid-request-missing-url.json");
 
         // exercise SUT + verify
         assertThrows(WebClientResponseException.BadRequest.class, () -> {
@@ -46,7 +46,7 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
         // setup fixture
         WebClient webClient = createWebClient();
-        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-missing-word.json");
+        String requestWithoutWord = testContentReader.read("webpage/words/counter/json/invalid/invalid-request-missing-word.json");
 
         // exercise SUT + verify
         assertThrows(WebClientResponseException.BadRequest.class, () -> {
@@ -60,7 +60,7 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
         // setup fixture
         WebClient webClient = createWebClient();
-        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-missing-url-and-word.json");
+        String requestWithoutWord = testContentReader.read("webpage/words/counter/json/invalid/invalid-request-missing-url-and-word.json");
 
         // exercise SUT + verify
         assertThrows(WebClientResponseException.BadRequest.class, () -> {
@@ -74,7 +74,7 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
         // setup fixture
         WebClient webClient = createWebClient();
-        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-incorrect-url.json");
+        String requestWithoutWord = testContentReader.read("webpage/words/counter/json/invalid/invalid-request-incorrect-url.json");
 
         // exercise SUT + verify
         assertThrows(WebClientResponseException.BadRequest.class, () -> {
@@ -88,7 +88,7 @@ public class WebpageWordCounterController4xxTest extends WebpageWordCounterContr
 
         // setup fixture
         WebClient webClient = createWebClient();
-        String requestWithoutWord = jsonResponseReader.read("webpage/words/counter/invalid/invalid-request-phrase-instead-of-word.json");
+        String requestWithoutWord = testContentReader.read("webpage/words/counter/json/invalid/invalid-request-phrase-instead-of-word.json");
 
         // exercise SUT + verify
         assertThrows(WebClientResponseException.BadRequest.class, () -> {

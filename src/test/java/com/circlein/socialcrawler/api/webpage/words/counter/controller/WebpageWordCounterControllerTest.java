@@ -1,6 +1,6 @@
-package com.circlein.socialcrawler.api.webpage.words.counter;
+package com.circlein.socialcrawler.api.webpage.words.counter.controller;
 
-import com.circlein.socialcrawler.api.common.JsonResponseReader;
+import com.circlein.socialcrawler.api.common.TestContentReader;
 import com.circlein.socialcrawler.api.common.RestControllerTest;
 import com.circlein.socialcrawler.api.webpage.words.counter.model.WordCountResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import static com.circlein.socialcrawler.api.webpage.words.counter.WebpageWordCo
 public abstract class WebpageWordCounterControllerTest extends RestControllerTest {
 
     @Autowired
-    JsonResponseReader jsonResponseReader;
+    TestContentReader testContentReader;
 
     WordCountResponse consumeWordCountApi(WebClient webClient, String body) {
         return webClient.

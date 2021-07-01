@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @Component
-public class JsonResponseReader {
+public class TestContentReader {
 
     public String read(String relativePathToJson) {
         try {
